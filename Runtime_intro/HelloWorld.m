@@ -66,7 +66,24 @@ struct Node {
 
 - (void)listReverse
 {
+    struct Node *p = [self constructList];
     
+    [self printList:p];
+    
+    //反转后的链表头部
+    struct Node * newH = NULL;
+    //头插法
+    while (p != NULL) {
+        //记录下一个结点
+        struct Node *temp = p->next;
+        //当前结点的next指向新链表的头部
+        p->next = newH;
+        //更改新链表头部为当前结点
+        newH = p;
+        //移动p到下一个结点
+        p = temp;
+    }
+    [self printList:newH];
 }
 
 /**
@@ -76,7 +93,15 @@ struct Node {
 */
 - (void)printList:(struct Node *)head
 {
+    struct Node *temp = head;
+    printf("list is : ");
     
+    while (temp != NULL) {
+        printf("%zd ",temp->data);
+        temp = temp->next;
+    }
+    
+    printf("\n");
 }
 
 /**  构造链表  */
@@ -105,5 +130,57 @@ struct Node {
     return head;
 }
 
+
+/// 有序数组合并
+// 将有序数组 {1,4,6,7,9} 和 {2,3,5,6,8,9,10,11,12} 合并为
+// {1,2,3,4,5,6,6,7,8,9,9,10,11,12}
+
+- (void)orderListMerge
+{
+    int aLen = 5, bLen = 9;
+    int a[] = {1,4,6,7,9};
+    int b[] = {2,3,5,6,8,9,10,11,12};
+    
+    [self printList:a length:aLen];
+    
+    [self printList:b length:bLen];
+    
+    int resultLen = aLen + bLen;
+    
+    int result[resultLen];
+    // p和q分别为a和b的下标，i为合并结果数组的下标
+    int p = 0, q = 0, i = 0;
+    //任一数组没有达到s边界则进行遍历
+    while (p < aLen && q < bLen) {
+        
+        //如果a数组对应位置的值小于b数组对应位置的值,则存储a数组的值，并移动a数组的下标与合并结果数组的下标
+        if (a[p] < b[q]) {
+            result[i++] = a[p++];
+        }else {
+            //否则存储b数组的值，并移动b数组的下标与合并结果数组的下标
+            result[i++] = b[q++];
+        }
+    }
+    
+    //如果a数组有剩余，将a数组剩余部分拼接到合并结果数组的后面
+    while (++p < aLen) {
+        result[i++] = a[p];
+    }
+    
+    //如果b数组有剩余，将b数组剩余部分拼接到合并结果数组的后面
+    while (q < bLen) {
+        result[i++] = b[q++];
+    }
+    
+    [self printList:result length:resultLen];
+}
+
+- (void)printList:(int [])list length:(int)length
+{
+    for (int i = 0; i < length; i++) {
+        printf("%d ",list[i]);
+    }
+    printf("\n");
+}
 
 @end

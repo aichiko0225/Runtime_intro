@@ -8,6 +8,7 @@
     
 
 #import "HelloWorld.h"
+#import <UIKit/UIKit.h>
 
 @implementation HelloWorld
 
@@ -181,6 +182,98 @@ struct Node {
         printf("%d ",list[i]);
     }
     printf("\n");
+}
+
+
+// HASH算法
+
+//哈希表
+//例：给定值是字母a，对应ASCII码值是97，数组索引下标为97。
+//这里的ASCII码，就算是一种哈希函数，存储和查找都通过该函数，有效地提高查找效率。
+//在一个字符串中找到第一个只出现一次的字符。如输入"abaccdeff"，输出'b'
+//字符(char)是一个长度为8的数据类型，因此总共有256种可能。
+//每个字母根据其ASCII码值作为数组下标对应数组种的一个数字。数组中存储的是每个字符出现的次数。
+
+- (void)hashTest
+{
+    NSString *testString = @"hhaabccdeef";
+    char testCh[100];
+    memcpy(testCh, [testString cStringUsingEncoding:NSUTF8StringEncoding], [testString length]);
+    
+    int list[256];
+    
+    for (int i = 0; i < 256; i++) {
+        list[i] = 0;
+    }
+    
+    char *p = testCh;
+    
+    char result = '\0';
+    
+    while (*p != result) {
+        
+        list[*(p++)]++;
+    }
+    
+    p = testCh;
+    
+    while (*p != result) {
+        
+        if (list[*p] == 1) {
+
+            result = *p;
+            
+            break;
+        }
+        
+        p++;
+    }
+    
+    printf("result:%c",result);
+}
+
+// 查找两个子视图的共同父视图
+// 思路:分别记录两个子视图的所有父视图并保存到数组中，然后倒序寻找,直至找到第一个不一样的父视图。
+
+- (void)findCommonSuperViews:(UIView *)view1 view2:(UIView *)view2
+{
+    NSArray *superViews1 = [self findSuperViews:view1];
+    
+    NSArray *superViews2 = [self findSuperViews:view2];
+    
+    NSMutableArray *resultArray = [NSMutableArray array];
+    
+    int i = 0;
+    
+    while (i < MIN(superViews1.count, superViews2.count)) {
+        
+        UIView *super1 = superViews1[superViews1.count - i - 1];
+        
+        UIView *super2 = superViews2[superViews2.count - i - 1];
+        
+        if (super1 == super2) {
+            [resultArray addObject:super1];
+            i++;
+        }else {
+            break;
+        }
+    }
+    
+    NSLog(@"resultArray:%@",resultArray);
+}
+
+- (NSArray <UIView *>*)findSuperViews:(UIView *)view
+{
+    UIView * temp = view.superview;
+    
+    NSMutableArray * result = [NSMutableArray array];
+    
+    while (temp) {
+        [result addObject:temp];
+        temp = temp.superview;
+    }
+    
+    return result;
 }
 
 @end

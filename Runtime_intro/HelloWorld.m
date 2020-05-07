@@ -276,4 +276,13 @@ struct Node {
     return result;
 }
 
+- (void)exchangeNum1:(int)num1 num2:(int)num2 {
+    num1 = num1 ^ num2;
+    printf("first value %d\n",num1);
+    num2 = num1 ^ num2;
+    printf("second value %d\n",num2);
+    num1 = num1 ^ num2;
+    printf("third value %d\n",num1);
+}
+
 @end

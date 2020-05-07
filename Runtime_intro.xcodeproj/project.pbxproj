@@ -20,6 +20,8 @@
 		5EE3FA18246045F6007A11F5 /* HelloWorld.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE3FA17246045F6007A11F5 /* HelloWorld.m */; };
 		5EE3FA1B2461B44A007A11F5 /* BlockIntro.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE3FA1A2461B44A007A11F5 /* BlockIntro.m */; };
 		5EE3FA1E24625212007A11F5 /* ThreadIntro.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE3FA1D24625212007A11F5 /* ThreadIntro.m */; };
+		5EE3FA212462BA6A007A11F5 /* RunLoopIntro.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE3FA202462BA6A007A11F5 /* RunLoopIntro.m */; };
+		5EE3FA242462DE66007A11F5 /* Sorting.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE3FA232462DE66007A11F5 /* Sorting.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,10 @@
 		5EE3FA1A2461B44A007A11F5 /* BlockIntro.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlockIntro.m; sourceTree = "<group>"; };
 		5EE3FA1C24625212007A11F5 /* ThreadIntro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreadIntro.h; sourceTree = "<group>"; };
 		5EE3FA1D24625212007A11F5 /* ThreadIntro.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreadIntro.m; sourceTree = "<group>"; };
+		5EE3FA1F2462BA6A007A11F5 /* RunLoopIntro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RunLoopIntro.h; sourceTree = "<group>"; };
+		5EE3FA202462BA6A007A11F5 /* RunLoopIntro.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RunLoopIntro.m; sourceTree = "<group>"; };
+		5EE3FA222462DE66007A11F5 /* Sorting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sorting.h; sourceTree = "<group>"; };
+		5EE3FA232462DE66007A11F5 /* Sorting.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Sorting.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,10 @@
 				5EE3FA1A2461B44A007A11F5 /* BlockIntro.m */,
 				5EE3FA1C24625212007A11F5 /* ThreadIntro.h */,
 				5EE3FA1D24625212007A11F5 /* ThreadIntro.m */,
+				5EE3FA1F2462BA6A007A11F5 /* RunLoopIntro.h */,
+				5EE3FA202462BA6A007A11F5 /* RunLoopIntro.m */,
+				5EE3FA222462DE66007A11F5 /* Sorting.h */,
+				5EE3FA232462DE66007A11F5 /* Sorting.m */,
 				5E9FB1C323EF03FE0082F5BE /* Main.storyboard */,
 				5E9FB1C623EF04000082F5BE /* Assets.xcassets */,
 				5E9FB1C823EF04000082F5BE /* LaunchScreen.storyboard */,
@@ -180,6 +190,8 @@
 			files = (
 				5EE3FA1E24625212007A11F5 /* ThreadIntro.m in Sources */,
 				5EE3FA1B2461B44A007A11F5 /* BlockIntro.m in Sources */,
+				5EE3FA242462DE66007A11F5 /* Sorting.m in Sources */,
+				5EE3FA212462BA6A007A11F5 /* RunLoopIntro.m in Sources */,
 				5E0E484D23F0630E004CFF38 /* Person.m in Sources */,
 				5E0E484923F05930004CFF38 /* NSObject+AssociatedObject.m in Sources */,
 				5E33D157245EBE1300688D2B /* ThreadLock.m in Sources */,
